@@ -63,27 +63,28 @@ const SignUpPage = () => {
           </div>
 
           {/* Form */}
-          <Form className="flex w-full flex-col gap-5" onSubmit={onSubmit}>
+          <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
             {/* Name */}
-            <TextField isRequired name="name">
+            <TextField className="w-full" isRequired name="name">
               {" "}
               <Label>নাম</Label>{" "}
-              <Input placeholder="আপনার নাম লিখুন" className="mt-1" />{" "}
+              <Input placeholder="আপনার নাম লিখুন" className="mt-1 w-full" />{" "}
               <FieldError />{" "}
             </TextField>
             {/* Image */}{" "}
-            <TextField isRequired name="image" type="url">
+            <TextField className="w-full " isRequired name="image" type="url">
               {" "}
               <Label>প্রোফাইল ইমেজ</Label>{" "}
               <Input
                 placeholder="https://example.com/profile.jpg"
-                className="mt-1"
+                className="mt-1 w-full"
               />{" "}
               <Description> আপনার প্রোফাইল ছবির URL দিন </Description>{" "}
               <FieldError />{" "}
             </TextField>
             {/* Email */}
             <TextField
+              className="w-full "
               isRequired
               name="email"
               type="email"
@@ -97,13 +98,13 @@ const SignUpPage = () => {
             >
               <Label className="text-sm font-medium text-gray-700">ইমেইল</Label>
 
-              <Input placeholder="john@example.com" className="mt-1" />
+              <Input placeholder="john@example.com" className="mt-1 w-full" />
 
               <FieldError />
             </TextField>
             {/* Password */}
             <TextField
-              className="w-full "
+              className="w-full rounded-md"
               name="password"
               validate={(value) => {
                 if (value.length < 8) {
@@ -124,7 +125,7 @@ const SignUpPage = () => {
               <Label> পাসওয়ার্ড</Label>
               <InputGroup>
                 <InputGroup.Input
-                  className="w-full"
+                  className="w-full  rounded-md"
                   type={isVisible ? "text" : "password"}
                 />
                 <InputGroup.Suffix className="pe-0">

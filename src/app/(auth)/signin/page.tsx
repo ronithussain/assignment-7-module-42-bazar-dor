@@ -64,6 +64,7 @@ const SignInPage = () => {
           <Form className="flex w-full flex-col gap-5" onSubmit={onSubmit}>
             {/* Email */}
             <TextField
+            className='w-full'
               isRequired
               name="email"
               type="email"
@@ -77,12 +78,12 @@ const SignInPage = () => {
             >
               <Label className="text-sm font-medium text-gray-700">ইমেইল</Label>
 
-              <Input placeholder="john@example.com" className="mt-1" />
+              <Input placeholder="john@example.com" className="mt-1 w-full" />
 
               <FieldError />
             </TextField>
 
-            {/* Password */}
+
             {/* Password */}
             <TextField
               className="w-full "
