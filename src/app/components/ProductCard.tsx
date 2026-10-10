@@ -43,6 +43,11 @@ const ProductCard = ({ product }: { product: Product }) => {
 
           <div className="flex items-center justify-between">
             <p className={`text-2xl font-bold`}>৳ {product?.today}</p>
+            <p
+              className={`text-sm font-medium ${product.change.dir === "up" ? "text-red-500" : "text-green-500"}`}
+            >
+              {product.change.dir === "up" ? "▲" : "▼"} {product.change.pct}%
+            </p>
           </div>
         </div>
       </div>

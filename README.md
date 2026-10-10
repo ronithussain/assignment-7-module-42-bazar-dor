@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+বাজার দর হলো একটি আধুনিক ওয়েব অ্যাপ্লিকেশন যা ব্যবহারকারীদের বাংলাদেশের বিভিন্ন বাজারের প্রয়োজনীয় পণ্যের (চাল, ডাল, সবজি, মাছ, মাংস ইত্যাদি) আজকের দাম এক নজরে দেখতে সাহায্য করে। 
 
-First, run the development server:
+## 🛠️ Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS + DaisyUI
+- **Language:** TypeScript
+- **Authentication:** BetterAuth (Email/Password, Google, GitHub)
+- **Notifications:** React Hot Toast
+- **Deployment:** Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ 5 Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **লাইভ প্রাইস টিকার (Live Price Ticker):** নেভবারের নিচে একটি ইনফিনিট স্ক্রলিং মার্কি (marquee) যা প্রতিনিয়ত পণ্যের দামের ওঠানামা (▲/▼) দেখায়।
+2. **ডাইনামিক প্রোডাক্ট সেকশন:** হোম পেজে আজকের সবচেয়ে বেশি দাম বাড়া (Top 6 Risers) এবং কমা (Top 6 Fallers) পণ্যের আলাদা সেকশন।
+3. **বিস্তারিত প্রোডাক্ট পেজ:** যেকোনো পণ্যে ক্লিক করলে বিভিন্ন বাজারের (কারওয়ান বাজার, মিরপুর, চট্টগ্রাম ইত্যাদি) সর্বনিম্ন, সর্বোচ্চ এবং গড় দামের তুলনামূলক চার্ট দেখা যায়।
+4. **ক্যাটাগরি ও সর্টিং:** ক্যাটাগরি অনুযায়ী পণ্য ফিল্টার করা যায় এবং "দাম: কম থেকে বেশি" বা "বেশি থেকে কম" অনুযায়ী সর্ট করা যায়।
+5. **সিকিউর অথেন্টিকেশন:** BetterAuth ব্যবহার করে ইমেইল/পাসওয়ার্ড এবং সোশ্যাল লগইন (Google/GitHub) সুবিধা। প্রোডাক্ট ডিটেইল পেজ লগইন ছাড়া অ্যাক্সেস করা যায় না।
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Live Link & Repository
 
-## Learn More
+- **Live Link:** [https://assignment-7-module-42-bazar-dor.vercel.app/]
+- **GitHub Repository:** [https://github.com/ronithussain/assignment-7-module-42-bazar-dor.git]
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+২০২৪ বাজার দর। সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।

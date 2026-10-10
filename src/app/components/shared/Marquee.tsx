@@ -22,7 +22,7 @@ const Marquee = async () => {
       <div className="container mx-auto">
         <MarqueeText className="py-1" direction="right" duration={10}>
           {headlines.map((p) => (
-            <Link href={`${p.id}`} key={p.id}>
+            <Link href={`/products-details/${p.id}`} key={p.id}>
               <span> {p.nameBn}</span>
               <span className="mx-2">{p.today} টাকা/কেজি</span>
               <span
