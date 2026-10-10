@@ -1,9 +1,11 @@
 import Banner from "./components/Banner";
+import Marquee from "./components/shared/Marquee";
 
 export default function Home() {
   return (
     <div>
-      <Banner/>
+      <Marquee />
+      <Banner />
     </div>
   );
 }

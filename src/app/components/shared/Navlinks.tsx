@@ -1,5 +1,6 @@
 import Link from "next/link";
-interface INav {
+import Nav from "./Nav";
+export interface INav {
   id: string;
   slug: string;
   nameBn: string;
@@ -11,22 +12,15 @@ const Navlinks = async () => {
     "https://api.abcz.workers.dev/api/bazardor/categories",
   );
   const navLinks: INav[] = await res.json();
-  console.log(navLinks);
+  // console.log(navLinks);
   return (
     <div className="container mx-auto px-4 flex flex-wrap justify-start md:justify-center items-center gap-6 pb-3">
       <Link href={"/"} className="text-xs md:text-lg">
-        Home
+          🏠 হোম
       </Link>
 
       {navLinks.map((nav) => (
-        <div key={nav.id}>
-          <Link href={`/category/${nav.id}`}>
-            <div className="flex gap-1 items-center">
-              <span>{nav.icon}</span>
-              <h2 className="text-xs md:text-lg">{nav.nameBn}</h2>
-            </div>
-          </Link>
-        </div>
+        <Nav key={nav.id} nav={nav} />
       ))}
     </div>
   );
