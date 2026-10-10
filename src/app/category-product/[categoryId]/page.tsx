@@ -1,4 +1,5 @@
 import CategoryProduct from "@/app/components/CategoryProduct";
+import { notFound } from "next/navigation";
 
 interface ICategory {
   id: number;
@@ -42,6 +43,9 @@ const CategoryProductPage = async ({
   const categories: ICategory[] = await navRes.json();
   const currentCategories = categories.find((c) => c.slug === categoryId);
   //   console.log(currentCategories, 'find categories')
+  if (!currentCategories) {
+    notFound();
+  }
 
   const res = await fetch(
     `https://api.abcz.workers.dev/api/bazardor/products`,
@@ -50,6 +54,9 @@ const CategoryProductPage = async ({
   const data: IProduct[] = await res.json();
   const products = data.filter((p) => p.category === categoryId);
 
+  if (!products) {
+    notFound();
+  }
   //   console.log(products, 'final data')
 
   return (
@@ -73,8 +80,7 @@ const CategoryProductPage = async ({
       <p className="text-md md:text-lg text-gray-800 mt-3">
         মোট {products?.length}টি পণ্য দেখানো হচ্ছে
       </p>
-        <CategoryProduct products={products} />
-      
+      <CategoryProduct products={products} />
     </div>
   );
 };
