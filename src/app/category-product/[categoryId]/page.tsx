@@ -38,7 +38,7 @@ const CategoryProductPage = async ({
 
   const navRes = await fetch(
     `https://api.abcz.workers.dev/api/bazardor/categories`,
-    { next: { revalidate: 60 } },
+ 
   );
   const categories: ICategory[] = await navRes.json();
   const currentCategories = categories.find((c) => c.slug === categoryId);
@@ -49,7 +49,7 @@ const CategoryProductPage = async ({
 
   const res = await fetch(
     `https://api.abcz.workers.dev/api/bazardor/products`,
-    { next: { revalidate: 60 } },
+   
   );
   const data: IProduct[] = await res.json();
   const products = data.filter((p) => p.category === categoryId);

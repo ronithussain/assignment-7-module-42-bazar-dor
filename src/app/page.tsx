@@ -23,7 +23,7 @@ export interface Product {
 export default async function Home() {
   const res = await fetch(
     "https://api.abcz.workers.dev/api/bazardor/products",
-    { next: { revalidate: 60 } },
+
   );
   const data: Product[] = await res.json();
 
