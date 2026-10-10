@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import { BiRightArrow } from "react-icons/bi";
 
 interface Market {
@@ -40,9 +40,7 @@ const ProductDetailPage = async ({
     `https://api.abcz.workers.dev/api/bazardor/products/${productId}`,
   );
   const data: ProductData = await res.json();
-  if (!data) {
-    notFound();
-  }
+ 
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-gray-800 font-sans pb-10">
       <div className="max-w-6xl mx-auto px-4 py-6">

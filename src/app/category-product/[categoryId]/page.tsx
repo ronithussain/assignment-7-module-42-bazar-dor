@@ -1,5 +1,5 @@
 import CategoryProduct from "@/app/components/CategoryProduct";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 
 interface ICategory {
   id: number;
@@ -43,9 +43,9 @@ const CategoryProductPage = async ({
   const categories: ICategory[] = await navRes.json();
   const currentCategories = categories.find((c) => c.slug === categoryId);
   //   console.log(currentCategories, 'find categories')
-  if (!currentCategories) {
-    notFound();
-  }
+  // if (!currentCategories) {
+  //   notFound();
+  // }
 
   const res = await fetch(
     `https://api.abcz.workers.dev/api/bazardor/products`,
@@ -54,9 +54,9 @@ const CategoryProductPage = async ({
   const data: IProduct[] = await res.json();
   const products = data.filter((p) => p.category === categoryId);
 
-  if (!products) {
-    notFound();
-  }
+  // if (!products) {
+  //   notFound();
+  // }
   //   console.log(products, 'final data')
 
   return (
