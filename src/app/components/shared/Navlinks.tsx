@@ -9,7 +9,7 @@ export interface INav {
 
 const Navlinks = async () => {
   const res = await fetch(
-    "https://api.abcz.workers.dev/api/bazardor/categories",
+    "https://api.abcz.workers.dev/api/bazardor/categories",{ next: { revalidate: 60 } }
   );
   const navLinks: INav[] = await res.json();
   // console.log(navLinks);

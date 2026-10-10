@@ -8,7 +8,7 @@ interface Inav {
 
 const Nav = ({ nav }: Inav) => {
   const pathname = usePathname();
-  const href = `/category/${nav.id}`;
+  const href = `/category-product/${nav.slug}`;
   const isActive = pathname === href;
   //   console.log(nav, "this is nav");
   return (
