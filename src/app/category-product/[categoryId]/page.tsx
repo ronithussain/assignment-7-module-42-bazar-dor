@@ -37,7 +37,7 @@ const CategoryProductPage = async ({
   console.log(categoryId);
 
   const navRes = await fetch(
-    `https://api.abcz.workers.dev/api/bazardor/categories`,
+    `https://openapi.programming-hero.com/api/bazardor/categories`,
  
   );
   const categories: ICategory[] = await navRes.json();
@@ -48,7 +48,7 @@ const CategoryProductPage = async ({
   // }
 
   const res = await fetch(
-    `https://api.abcz.workers.dev/api/bazardor/products`,
+    `https://openapi.programming-hero.com/api/bazardor/products`,
    
   );
   const data: IProduct[] = await res.json();

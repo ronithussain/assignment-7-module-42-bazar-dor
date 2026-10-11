@@ -8,13 +8,12 @@ export interface INav {
 }
 
 const Navlinks = async () => {
-  const res = await fetch(
-    "https://api.abcz.workers.dev/api/bazardor/categories",{ next: { revalidate: 60 } }
-  );
+  const res = await fetch("https://openapi.programming-hero.com/api/bazardor/categories");
   const navLinks: INav[] = await res.json();
   // console.log(navLinks);
   return (
-    <div className="container mx-auto px-4 flex flex-wrap justify-start md:justify-center items-center gap-6 pb-3">
+   <div className="border-t-1 border-gray-300">
+     <div className="container  mx-auto px-1 md:px-0 flex flex-wrap justify-start md:justify-center items-center gap-6 pb-2">
       <Link href={"/"} className="text-xs md:text-lg">
           🏠 হোম
       </Link>
@@ -23,6 +22,7 @@ const Navlinks = async () => {
         <Nav key={nav.id} nav={nav} />
       ))}
     </div>
+   </div>
   );
 };
 

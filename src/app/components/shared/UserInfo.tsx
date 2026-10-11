@@ -7,6 +7,7 @@ import { ArrowDown } from "@gravity-ui/icons";
 import Image from "next/image";
 import { Button } from "@heroui/react";
 import Link from "next/link";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 const UserInfo = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -30,15 +31,15 @@ const UserInfo = () => {
           {/* Profile Picture */}{" "}
           <Image
             src={user?.image || "/default-avatar.png"}
-            height={40}
-            width={40}
+            height={12}
+            width={12}
             alt="profile"
-            className="h-10 w-10 rounded-full object-cover ring-2 ring-green-600"
+            className="h-12 w-12 rounded-full object-cover ring-2 ring-green-600"
           />
-          <h2>{user.name}</h2>
+          <h2 className="text-xs md:text-md text-gray-700">{user.name}</h2>
           <button onClick={handleShowDropdown}>
             <span className="text-gray-500">
-              <ArrowDown />
+              <TiArrowSortedDown />
             </span>
           </button>
           {/* Dropdown Menu */}

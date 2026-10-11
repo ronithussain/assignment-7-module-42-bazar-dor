@@ -18,7 +18,7 @@ const Nav = ({ nav }: Inav) => {
         className={`flex gap-1 items-center px-2 py-1 rounded-md transition-colors ${
           isActive
             ? "text-[#05893E] font-semibold border-b-2 border-[#05893E]"
-            : "text-gray-700 hover:text-red-500"
+            : "text-gray-700 hover:text-[#05893E]"
         }`}
       >
         <span>{nav.icon}</span>

@@ -12,14 +12,14 @@ interface Headline {
   };
 }
 const Marquee = async () => {
-  const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
+  const res = await fetch("https://openapi.programming-hero.com/api/bazardor/products");
   const data = await res.json();
   const headlines: Headline[] = data;
 
   // console.log(headlines);
   return (
-    <div className=" text-gray-700 border border-gray-200 px-4 py-0.5">
-      <div className="container mx-auto">
+    <div className=" text-gray-700 border-b-1 border-gray-200 px-4 py-0.5">
+      <div className="container mx-auto md:px-4">
         <MarqueeText className="py-1" direction="right" duration={10}>
           {headlines.map((p) => (
             <Link href={`/products-details/${p.id}`} key={p.id}>

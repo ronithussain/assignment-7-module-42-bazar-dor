@@ -1,6 +1,6 @@
 "use client";
 import { signUp } from "@/lib/auth-client";
-import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
+import { Eye, EyeSlash } from "@gravity-ui/icons";
 import {
   Button,
   Description,
@@ -47,44 +47,48 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-[#f8fbf8] flex items-center justify-center px-4 py-10 font-sans">
+      <div className="w-full max-w-lg">
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">
+            অ্যাকাউন্ট তৈরি করুন
+          </h2>
+          <p className="text-sm text-gray-600">
+            বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
+          </p>
+        </div>
+
         {/* Card */}
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8">
-          {/* Header */}
-          <div className="text-center mb-7">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              সাইন আপ
-            </h2>
-
-            <p className=" text-sm text-gray-500">
-              বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
-            </p>
-          </div>
-
-          {/* Form */}
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 sm:p-8">
           <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
+            
             {/* Name */}
             <TextField className="w-full" isRequired name="name">
-              {" "}
-              <Label>নাম</Label>{" "}
-              <Input placeholder="আপনার নাম লিখুন" className="mt-1 w-full" />{" "}
-              <FieldError />{" "}
+              <Label className="text-sm font-semibold text-gray-800 mb-1.5 block">নাম</Label>
+              <Input 
+                placeholder="রহিম উদ্দিন" 
+                className="w-full rounded-lg border-gray-200 focus:border-green-600 focus:ring-green-600 py-2.5 px-3 text-sm outline-none" 
+              />
+              <FieldError />
             </TextField>
-            {/* Image */}{" "}
-            <TextField className="w-full " isRequired name="image" type="url">
-              {" "}
-              <Label>প্রোফাইল ইমেজ</Label>{" "}
+
+            {/* Image Field (Added as requested) */}
+            <TextField className="w-full" isRequired name="image" type="url">
+              <Label className="text-sm font-semibold text-gray-800 mb-1.5 block">প্রোফাইল ইমেজ</Label>
               <Input
                 placeholder="https://example.com/profile.jpg"
-                className="mt-1 w-full"
-              />{" "}
-              <Description> আপনার প্রোফাইল ছবির URL দিন </Description>{" "}
-              <FieldError />{" "}
+                className="w-full rounded-lg border-gray-200 focus:border-green-600 focus:ring-green-600 py-2.5 px-3 text-sm outline-none"
+              />
+              <Description className="text-xs text-gray-500 mt-1.5 block">
+                আপনার প্রোফাইল ছবির URL দিন
+              </Description>
+              <FieldError />
             </TextField>
+
             {/* Email */}
             <TextField
-              className="w-full "
+              className="w-full"
               isRequired
               name="email"
               type="email"
@@ -92,48 +96,48 @@ const SignUpPage = () => {
                 if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
                   return "Please enter a valid email address";
                 }
-
                 return null;
               }}
             >
-              <Label className="text-sm font-medium text-gray-700">ইমেইল</Label>
-
-              <Input placeholder="john@example.com" className="mt-1 w-full" />
-
+              <Label className="text-sm font-semibold text-gray-800 mb-1.5 block">ইমেইল</Label>
+              <Input 
+                placeholder="you@example.com" 
+                className="w-full rounded-lg border-gray-200 focus:border-green-600 focus:ring-green-600 outline-none py-2.5 px-3 text-sm" 
+              />
               <FieldError />
             </TextField>
+
             {/* Password */}
             <TextField
-              className="w-full rounded-md"
+              className="w-full"
               name="password"
               validate={(value) => {
                 if (value.length < 8) {
                   return "Password must be at least 8 characters";
                 }
-
                 if (!/[A-Z]/.test(value)) {
                   return "Password must contain at least one uppercase letter";
                 }
-
                 if (!/[0-9]/.test(value)) {
                   return "Password must contain at least one number";
                 }
-
                 return null;
               }}
             >
-              <Label> পাসওয়ার্ড</Label>
-              <InputGroup>
+              <Label className="text-sm font-semibold text-gray-800 mb-1.5 block">পাসওয়ার্ড</Label>
+              <InputGroup className="flex w-full rounded-lg border border-gray-200 focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 overflow-hidden">
                 <InputGroup.Input
-                  className="w-full  rounded-md"
+                  className="w-full border-0 focus:ring-0 py-2.5 px-3 text-sm placeholder-gray-400"
                   type={isVisible ? "text" : "password"}
+                  placeholder="কমপক্ষে ৮ অক্ষর"
                 />
-                <InputGroup.Suffix className="pe-0">
+                <InputGroup.Suffix className="flex items-center pr-2 bg-white">
                   <Button
                     isIconOnly
                     aria-label={isVisible ? "Hide password" : "Show password"}
                     size="sm"
                     variant="ghost"
+                    className="text-gray-400 hover:text-gray-600"
                     onPress={() => setIsVisible(!isVisible)}
                   >
                     {isVisible ? (
@@ -144,55 +148,55 @@ const SignUpPage = () => {
                   </Button>
                 </InputGroup.Suffix>
               </InputGroup>
-              <Description className="text-xs text-gray-500">
+              <Description className="text-xs text-gray-500 mt-1.5 block">
                 কমপক্ষে ৮ অক্ষর, একটি বড় হাতের অক্ষর এবং একটি সংখ্যা দিন
               </Description>
+              <FieldError />
             </TextField>
-            {/* Buttons */}
-            <div className="flex gap-3 w-full">
-              <Button type="submit" className="flex-1">
-                <Check />
-                Submit
-              </Button>
 
-              <Button type="reset" variant="secondary" className="flex-1">
-                Reset
-              </Button>
-            </div>
-            {/* Modern Divider */}
+            {/* Confirm Password */}
+            {/* <TextField className="w-full" name="confirmPassword">
+              <Label className="text-sm font-semibold text-gray-800 mb-1.5 block">পাসওয়ার্ড নিশ্চিত করুন</Label>
+              <Input 
+                placeholder="আবার লিখুন" 
+                type="password"
+                className="w-full rounded-lg border-gray-200 focus:border-green-600 focus:ring-green-600 py-2.5 px-3 text-sm" 
+              />
+              <FieldError />
+            </TextField> */}
+
+            {/* Submit Button */}
+            <Button 
+              type="submit" 
+              className="w-full bg-[#15803d] hover:bg-[#166534] text-white font-semibold py-3 rounded-lg transition-colors mt-2"
+            >
+              অ্যাকাউন্ট তৈরি করুন
+            </Button>
+
+            {/* Divider */}
             <div className="flex items-center gap-4 my-2">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-gray-300" />
-
+              <div className="h-px flex-1 bg-gray-200" />
               <span className="text-sm font-medium text-gray-500">অথবা</span>
-
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-gray-300 to-gray-300" />
+              <div className="h-px flex-1 bg-gray-200" />
             </div>
-            {/* social */}
-            <div className="flex justify-between gap-2">
+
+            {/* Social Login */}
+            <div className="flex flex-col sm:flex-row justify-between gap-3">
               <GoogleSocial />
               <GithubSocial />
             </div>
-            {/* Sign Up */}
-            <div className="text-center pt-2">
-              <span className="text-sm text-gray-500">অ্যাকাউন্ট নেই? </span>
 
-              <button
-                type="button"
-                className="text-sm font-semibold text-blue-600 hover:text-blue-700 hover:underline"
+            {/* Login Link */}
+            <div className="text-center pt-4">
+              <span className="text-sm text-gray-600">অ্যাকাউন্ট আছে? </span>
+              <Link
+                href="/signin"
+                className="text-sm font-bold text-[#15803d] hover:text-[#166534] hover:underline"
               >
-                সাইন আপ করুন
-              </button>
+                সাইন ইন করুন
+              </Link>
             </div>
           </Form>
-
-          {/* Home */}
-          <div className="mt-6 pt-5 border-t border-gray-100 text-center">
-            <Link href={"/"}>
-              <span className="text-sm text-gray-500 hover:text-gray-800 cursor-pointer transition">
-                ← হোম পেজে ফিরে যান
-              </span>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
