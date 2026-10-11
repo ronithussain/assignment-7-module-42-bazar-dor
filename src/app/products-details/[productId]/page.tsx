@@ -50,12 +50,12 @@ const ProductDetailPage = async ({
           <span>
             <BiRightArrow />
           </span>
-          <span>চাল</span>
+          <span>{data?.categoryNameBn}</span>
           <span>
             <BiRightArrow />
           </span>
 
-          <span className="text-gray-700">স্বর্ণমাছি চাল</span>
+          <span className="text-gray-700">{data?.categoryNameBn}</span>
         </div>
 
         {/* Top Header Section */}

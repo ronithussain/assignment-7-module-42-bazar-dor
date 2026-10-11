@@ -67,7 +67,7 @@ export default async function Home() {
           </div>
         </div>
         {/* all Products */}
-        <div className="mt-4 md:mt-6">
+        <div id="all-products" className="scroll-mt-20 mt-4 md:mt-6 ">
           <h2 className="text-xl md:text-2xl text-gray-800 font-bold  mb-2">
             সব পণ্য
           </h2>

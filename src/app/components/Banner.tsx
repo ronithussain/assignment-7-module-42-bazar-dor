@@ -11,7 +11,6 @@ export default function Banner() {
       <div className="container mx-auto px-4 py-8">
         <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
           <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-8 p-6 sm:p-8 md:p-10">
-            
             {/* Left: Content */}
             <div className="flex-1 w-full">
               {/* Date Badge - Fixed for mobile center */}
@@ -33,12 +32,12 @@ export default function Banner() {
 
               {/* CTA Button Container */}
               <div className="flex justify-center md:justify-start">
-                <Link
-                  href="/prices"
+                <a
+                  href="#all-products"
                   className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm sm:text-base font-medium px-5 py-2.5 rounded-lg transition shadow-sm"
                 >
                   সব পণ্যের দাম দেখুন
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -53,7 +52,6 @@ export default function Banner() {
                 className="w-full h-auto object-contain"
               />
             </div>
-            
           </div>
         </div>
       </div>
